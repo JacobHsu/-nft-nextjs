@@ -1,4 +1,5 @@
 import Logo from "@components/logo";
+import ColorSwitcher from "@components/color-switcher";
 import headerData from "../../data/general/header.json";
 
 const Header = () => (
@@ -13,7 +14,7 @@ const Header = () => (
                         id="my_switcher"
                         className="setting-option my_switcher"
                     >
-                        ColorSwitcher
+                        <ColorSwitcher />
                     </div>
                 </div>
             </div>
