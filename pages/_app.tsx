@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
@@ -11,5 +12,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         </ThemeProvider>
     );
 }
+
+MyApp.propTypes = {
+  Component: PropTypes.elementType,
+  pageProps: PropTypes.shape({
+      className: PropTypes.string,
+  }),
+};
 
 export default MyApp;
