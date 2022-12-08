@@ -6,6 +6,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import "../assets/css/bootstrap.min.css";
+import "../assets/css/feather.css";
 import "../assets/scss/style.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {

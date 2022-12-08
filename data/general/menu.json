@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "text": "Home",
+        "path": "/",
+        "submenu": [
+            {
+                "id": 11,
+                "text": "Home Page One",
+                "path": "/",
+                "icon": "feather-home"
+            },
+            {
+                "id": 12,
+                "text": "Home Page Two",
+                "path": "/index-02",
+                "icon": "feather-home"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "text": "About",
+        "path": "/about"
+    }
+]

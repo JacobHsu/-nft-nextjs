@@ -1,8 +1,10 @@
 /* Default  */
 @import "default/variables";
+@import "default/common";
 
 /* Header  */
 @import "header/header";
+@import "header/nav";
 @import "header/one-page";
 
 /* Elements  */
