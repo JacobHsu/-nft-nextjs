@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const Logo = ({ logo }) => (
+const Logo = ({ logo }: { logo: any }) => (
     <div>
         {logo?.[0]?.src && (
             <Image
