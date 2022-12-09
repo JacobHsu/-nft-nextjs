@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Anchor from "@ui/anchor";
 
-const SubMenu = ({ menu }: { menu: any }) => (
+const SubMenu = ({ menu }: any) => (
     <ul className="submenu">
         {menu.map((nav: any) => (
             <li key={nav.id}>
