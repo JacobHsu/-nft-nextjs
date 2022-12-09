@@ -18,10 +18,11 @@
     "paths": {
       "@layout/*": ["layouts/*"],
       "@components/*": ["components/*"],
+      "@containers/*": ["containers/*"],
       "@ui/*": ["components/ui/*"],
       "@hooks": ["hooks"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/ui/scroll-to-top/index.jsx"],
   "exclude": ["node_modules"]
 }
