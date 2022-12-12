@@ -4,7 +4,7 @@ import NiceSelect from "@ui/nice-select";
 
 
 const ProductFilter = forwardRef(
-    ({ slectHandler, sortHandler, priceHandler, inputs }: any, ref) => (
+    ({ slectHandler, sortHandler, priceHandler, inputs }: any, ref:any) => (
         <div className="default-exp-wrapper default-exp-expand" ref={ref}>
             <div className="inner">
                 <div className="filter-select-option">
