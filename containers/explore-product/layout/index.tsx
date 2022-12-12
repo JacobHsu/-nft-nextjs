@@ -1,7 +1,9 @@
 import { useReducer, useRef, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import SectionTitle from "@components/section-title/layout";
+import ProductFilter from "@components/product-filter/layout";
 import FilterButton from "@ui/filter-button";
+import { slideToggle } from "@utils/methods";
 
 function reducer(state:any, action:any) {
     switch (action.type) {
@@ -28,9 +30,27 @@ const ExploreProductArea = ({ className, space, data }: any) => {
     const filterHandler = () => {
         dispatch({ type: "FILTER_TOGGLE" });
         if (!filterRef.current) return;
-        // slideToggle(filterRef.current);
+        slideToggle(filterRef.current);
     };
 
+    const slectHandler = ({ value }: any, name: string) => {
+        dispatch({ type: "SET_INPUTS", payload: { [name]: value } });
+    };
+
+    const priceHandler = (value: string) => {
+        dispatch({ type: "SET_INPUTS", payload: { price: value } });
+    };
+
+    const sortHandler = ({ value }: any) => {
+        const sortedProducts = state.products.sort((a:any, b:any) => {
+            if (value === "most-liked") {
+                return a.likeCount < b.likeCount ? 1 : -1;
+            }
+            return a.likeCount > b.likeCount ? 1 : -1;
+        });
+        dispatch({ type: "SET_PRODUCTS", payload: sortedProducts });
+    };
+    
     return (
         <div
             className={clsx(
@@ -56,6 +76,13 @@ const ExploreProductArea = ({ className, space, data }: any) => {
                         />
                     </div>
                 </div>
+                <ProductFilter
+                    ref={filterRef}
+                    slectHandler={slectHandler}
+                    sortHandler={sortHandler}
+                    priceHandler={priceHandler}
+                    inputs={state.inputs}
+                />
             </div>
         </div>
     );

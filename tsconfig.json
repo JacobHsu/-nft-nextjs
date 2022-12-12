@@ -20,6 +20,7 @@
       "@components/*": ["components/*"],
       "@containers/*": ["containers/*"],
       "@ui/*": ["components/ui/*"],
+      "@utils/*": ["utils/*"],
       "@hooks": ["hooks"]
     }
   },
