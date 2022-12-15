@@ -1,6 +1,7 @@
 import { useReducer, useRef, useEffect, useCallback } from "react";
 import clsx from "clsx";
 import SectionTitle from "@components/section-title/layout";
+import Product from "@components/product/layout";
 import ProductFilter from "@components/product-filter/layout";
 import FilterButton from "@ui/filter-button";
 import { slideToggle } from "@utils/methods";
@@ -83,6 +84,34 @@ const ExploreProductArea = ({ className, space, data }: any) => {
                     priceHandler={priceHandler}
                     inputs={state.inputs}
                 />
+                                <div className="row g-5">
+                    {state.products.length > 0 ? (
+                        <>
+                            {state.products.slice(0, 10).map((prod:any) => (
+                                <div
+                                    key={prod.id}
+                                    className="col-5 col-lg-4 col-md-6 col-sm-6 col-12"
+                                >
+                                    <Product
+                                        overlay
+                                        placeBid={!!data.placeBid}
+                                        title={prod.title}
+                                        slug={prod.slug}
+                                        latestBid={prod.latestBid}
+                                        price={prod.price}
+                                        likeCount={prod.likeCount}
+                                        auction_date={prod.auction_date}
+                                        image={prod.images?.[0]}
+                                        authors={prod.authors}
+                                        bitCount={prod.bitCount}
+                                    />
+                                </div>
+                            ))}
+                        </>
+                    ) : (
+                        <p>No item to show</p>
+                    )}
+                </div>
             </div>
         </div>
     );
