@@ -1,9 +1,18 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Footer from "@layout/footer";
 import Header from "@layout/header";
 
 const Home: NextPage = () => {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        router.push("/explore-filter");
+    }, [router]);
+
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <Header/>
